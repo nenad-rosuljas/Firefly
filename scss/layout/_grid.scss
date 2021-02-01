@@ -1,0 +1,17 @@
+.l-grid__layout {
+  width: 98%;
+  margin: 0 auto;
+
+  @include from($tablet) {
+    width: 100%;
+    max-width: 75rem;
+  }
+
+  @include from($desktop) {
+    max-width: 100rem;
+  }
+
+  @include from($desktop-large) {
+    max-width: 114rem;
+  }
+}
