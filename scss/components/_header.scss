@@ -8,7 +8,7 @@
     padding: 1.3rem 2rem;
 
     .c-icon-group {
-      .icon {
+      .c-icon {
         width: 1.2rem;
         height: 1.4rem;
         filter: invert(48%) sepia(35%) saturate(258%) hue-rotate(174deg)
@@ -53,6 +53,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      margin-top: 1rem;
 
       .c-header__logo-sign {
         margin-right: 1rem;
@@ -119,6 +120,10 @@
     .c-header__container--bottom {
       display: flex;
       align-items: center;
+
+      .c-header__logo {
+        margin-top: 0;
+      }
 
       .c-header__nav {
         flex-direction: row;
