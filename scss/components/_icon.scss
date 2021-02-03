@@ -1,0 +1,17 @@
+.c-icon {
+  width: 1.2rem;
+  height: 1.4rem;
+  filter: invert(48%) sepia(35%) saturate(258%) hue-rotate(174deg)
+    brightness(94%) contrast(92%);
+  transition: 0.3s;
+
+  &:not(:last-of-type) {
+    margin-right: 2rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    filter: invert(68%) sepia(9%) saturate(2960%) hue-rotate(73deg)
+      brightness(87%) contrast(75%);
+  }
+}

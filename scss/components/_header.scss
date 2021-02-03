@@ -7,26 +7,6 @@
     flex-direction: column;
     padding: 1.3rem 2rem;
 
-    .c-icon-group {
-      .c-icon {
-        width: 1.2rem;
-        height: 1.4rem;
-        filter: invert(48%) sepia(35%) saturate(258%) hue-rotate(174deg)
-          brightness(94%) contrast(92%);
-        transition: 0.3s;
-
-        &:not(:last-of-type) {
-          margin-right: 2rem;
-        }
-
-        &:hover {
-          cursor: pointer;
-          filter: invert(68%) sepia(9%) saturate(2960%) hue-rotate(73deg)
-            brightness(87%) contrast(75%);
-        }
-      }
-    }
-
     .c-header__hotline {
       font-size: 1.2rem;
       color: $color-cyan-blue-primary;
@@ -64,26 +44,29 @@
 
     .c-header__nav {
       margin-left: auto;
-      list-style-type: none;
-      display: flex;
-      flex-direction: column;
       text-align: center;
 
-      .c-header__list-item {
-        margin-top: 1rem;
-        padding: 2.4rem 0;
+      .c-header__list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
 
-        a {
-          text-decoration: none;
-          text-transform: uppercase;
-          color: $color-cyan-blue-tertiary;
-          font-size: 1.1rem;
-          font-family: $font-primary-regular;
-          transition: 0.3s;
+        .c-header__list-item {
+          margin-top: 1rem;
+          padding: 2.4rem 0;
 
-          &:hover {
-            cursor: pointer;
-            color: $color-green-primary;
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-cyan-blue-tertiary;
+            font-size: 1.1rem;
+            font-family: $font-primary-regular;
+            transition: 0.3s;
+
+            &:hover {
+              cursor: pointer;
+              color: $color-green-primary;
+            }
           }
         }
       }
@@ -97,6 +80,76 @@
 
 .active {
   border-top: 2px solid $color-green-primary;
+}
+
+// HAMBURGER BUTTON ==========================
+// Appears on small screen devices
+.c-header__nav-toggle-container {
+  overflow: hidden;
+  display: flex;
+  position: absolute;
+  right: 0.5rem;
+  top: 2rem;
+  padding: 0.5rem;
+}
+
+.c-header__nav-toggle-wrap {
+  position: relative;
+  top: 0.2rem;
+  width: 3.5rem;
+  height: 2.7rem;
+  transition: 0.25s;
+  z-index: 2;
+}
+
+.c-header__nav-toggle {
+  cursor: pointer;
+  display: inline-block;
+
+  .c-header__nav-bar {
+    position: absolute;
+    border-radius: 0.2rem;
+    width: 80%;
+    transition: 0.5s;
+  }
+
+  .c-header__nav-bar--top {
+    border: 0.4rem solid $color-cyan-blue-primary;
+    border-bottom: none;
+    top: 0;
+  }
+
+  .c-header__nav-bar--middle {
+    height: 0.4rem;
+    background-color: $color-cyan-blue-primary;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    top: 0.4rem;
+  }
+
+  .c-header__nav-bar--bottom {
+    border: 0.4rem solid $color-cyan-blue-primary;
+    border-top: none;
+    top: 2.2rem;
+  }
+}
+
+.c-header__nav-toggle {
+  &.c-button-open .c-header__nav-bar--top {
+    transform: rotate(45deg) translate(0.8rem, 0.8rem);
+    transition: 0.5s;
+  }
+
+  &.c-button-open .c-header__nav-bar--middle {
+    transform: translate(23rem);
+    transition: 0.1s ease-in;
+    opacity: 0;
+  }
+
+  &.c-button-open .c-header__nav-bar--bottom {
+    transform: rotate(-45deg) translate(0.8rem, -0.7rem);
+    transition: 0.5s;
+  }
 }
 
 // Media query ===============================
@@ -126,12 +179,15 @@
       }
 
       .c-header__nav {
-        flex-direction: row;
         text-align: unset;
 
-        .c-header__list-item {
-          margin-top: 0;
-          margin-left: 5rem;
+        .c-header__list {
+          flex-direction: row;
+
+          .c-header__list-item {
+            margin-top: 0;
+            margin-left: 5rem;
+          }
         }
       }
 
@@ -139,6 +195,10 @@
         display: inline;
         margin-left: 3.5rem;
       }
+    }
+
+    .c-header__nav-toggle {
+      display: none;
     }
   }
 }
