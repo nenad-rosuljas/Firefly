@@ -418,5 +418,97 @@ p {
     grid-template-columns: repeat(4, auto);
   }
 }
+.c-service {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+.c-service .c-service__image {
+  margin-top: 5rem;
+  width: 28rem;
+}
+.c-service .c-service__container {
+  width: 100%;
+  max-width: 65rem;
+}
+.c-service .c-service__container .c-service__text {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+.c-service .c-service__container .c-service__field-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 5rem;
+}
+.c-service .c-service__container .c-service__field-container .c-service__group {
+  display: flex;
+}
+.c-service .c-service__container .c-service__field-container .c-service__group .c-service__group-image {
+  width: 3rem;
+  height: 3.5rem;
+}
+.c-service .c-service__container .c-service__field-container .c-service__group .c-service__group-image.c-service__group-image--small {
+  width: 2rem;
+  height: 3.5rem;
+  margin-right: 1rem;
+}
+.c-service .c-service__container .c-service__field-container .c-service__group .c-service__group-divider {
+  border-left: 1px solid #f1f1f1;
+  height: 8.6rem;
+  margin: 0 1.5rem;
+}
+.c-service .c-service__container .c-service__field-container .c-service__group .c-service__body-title {
+  color: #252b33;
+}
+.c-service .c-service__container .c-service__field-container .c-service__group .c-service__body-description {
+  margin-top: 2rem;
+}
+
+@media (min-width: 769px) {
+  .c-service {
+    padding: 0;
+  }
+  .c-service .c-service__image {
+    width: 70rem;
+  }
+  .c-service .c-service__container .c-service__field-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .c-service .c-service__container .c-service__field-container .c-service__group .c-service__group-divider {
+    margin: 0 2.5rem;
+  }
+}
+@media (min-width: 1025px) {
+  .c-service {
+    flex-direction: row;
+    align-items: center;
+    text-align: unset;
+  }
+  .c-service .c-service__image {
+    margin-top: 10rem;
+    margin-left: -20rem;
+    width: 70rem;
+  }
+  .c-service .c-service__container {
+    margin-left: -3rem;
+    margin-right: 2rem;
+  }
+}
+@media (min-width: 1201px) {
+  .c-service .c-service__image {
+    width: auto;
+    margin-left: -35rem;
+  }
+  .c-service .c-service__container .c-service__text {
+    margin-top: 2.2rem;
+    margin-bottom: 11.5rem;
+  }
+  .c-service .c-service__container .c-service__field-container {
+    gap: 7rem;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
