@@ -1,0 +1,204 @@
+.c-header {
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0.2rem 0.5rem $color-cyan-blue-quaternary;
+
+  .c-header__container--top {
+    display: flex;
+    flex-direction: column;
+    padding: 1.3rem 2rem;
+
+    .c-header__hotline {
+      font-size: 1.2rem;
+      color: $color-cyan-blue-primary;
+      font-family: $font-primary-regular;
+      margin: 0.5rem 0;
+    }
+
+    .c-header__hotline-number {
+      font-size: 1.2rem;
+      color: $color-cyan-blue-secondary;
+      font-family: $font-primary-light;
+    }
+  }
+
+  .c-header__divider {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+
+  .c-header__container--bottom {
+    display: none;
+
+    .c-header__logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+
+      .c-header__logo-sign {
+        margin-right: 1rem;
+        filter: invert(18%) sepia(34%) saturate(304%) hue-rotate(173deg)
+          brightness(99%) contrast(91%);
+      }
+    }
+
+    .c-header__nav {
+      margin-left: auto;
+      text-align: center;
+
+      .c-header__list {
+        display: flex;
+        flex-direction: column;
+        list-style-type: none;
+
+        .c-header__list-item {
+          margin-top: 1rem;
+          padding: 2.4rem 0;
+
+          a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $color-cyan-blue-tertiary;
+            font-size: 1.1rem;
+            font-family: $font-primary-regular;
+            transition: 0.3s;
+
+            &:hover {
+              cursor: pointer;
+              color: $color-green-primary;
+            }
+          }
+        }
+      }
+    }
+
+    .c-header__button {
+      display: none;
+    }
+  }
+}
+
+.active {
+  border-top: 2px solid $color-green-primary;
+}
+
+// HAMBURGER BUTTON ==========================
+// Appears on small screen devices
+.c-header__nav-toggle-container {
+  overflow: hidden;
+  display: flex;
+  position: absolute;
+  right: 0.5rem;
+  top: 2rem;
+  padding: 0.5rem;
+}
+
+.c-header__nav-toggle-wrap {
+  position: relative;
+  top: 0.2rem;
+  width: 3.5rem;
+  height: 2.7rem;
+  transition: 0.25s;
+  z-index: 2;
+}
+
+.c-header__nav-toggle {
+  cursor: pointer;
+  display: inline-block;
+
+  .c-header__nav-bar {
+    position: absolute;
+    border-radius: 0.2rem;
+    width: 80%;
+    transition: 0.5s;
+  }
+
+  .c-header__nav-bar--top {
+    border: 0.4rem solid $color-cyan-blue-primary;
+    border-bottom: none;
+    top: 0;
+  }
+
+  .c-header__nav-bar--middle {
+    height: 0.4rem;
+    background-color: $color-cyan-blue-primary;
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+    top: 0.4rem;
+  }
+
+  .c-header__nav-bar--bottom {
+    border: 0.4rem solid $color-cyan-blue-primary;
+    border-top: none;
+    top: 2.2rem;
+  }
+}
+
+.c-header__nav-toggle {
+  &.c-button-open .c-header__nav-bar--top {
+    transform: rotate(45deg) translate(0.8rem, 0.8rem);
+    transition: 0.5s;
+  }
+
+  &.c-button-open .c-header__nav-bar--middle {
+    transform: translate(23rem);
+    transition: 0.1s ease-in;
+    opacity: 0;
+  }
+
+  &.c-button-open .c-header__nav-bar--bottom {
+    transform: rotate(-45deg) translate(0.8rem, -0.7rem);
+    transition: 0.5s;
+  }
+}
+
+// Media query ===============================
+@include from($tablet) {
+  .c-header {
+    .c-header__container--top {
+      padding: 1.3rem 0 1rem;
+      flex-direction: row;
+      justify-content: unset;
+
+      .c-header__hotline {
+        margin: 0;
+        margin-left: auto;
+      }
+
+      .c-header__hotline-number {
+        margin-left: 1.6rem;
+      }
+    }
+
+    .c-header__container--bottom {
+      display: flex;
+      align-items: center;
+
+      .c-header__logo {
+        margin-top: 0;
+      }
+
+      .c-header__nav {
+        text-align: unset;
+
+        .c-header__list {
+          flex-direction: row;
+
+          .c-header__list-item {
+            margin-top: 0;
+            margin-left: 5rem;
+          }
+        }
+      }
+
+      .c-header__button {
+        display: inline;
+        margin-left: 3.5rem;
+      }
+    }
+
+    .c-header__nav-toggle {
+      display: none;
+    }
+  }
+}
